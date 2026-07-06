@@ -94,6 +94,17 @@ const Progressbar = document.getElementById("Progressbar");
 const datetoday = document.getElementById("foodlog-date");
 const logbtnlast = document.getElementById("lastbtn1");
 const weeklyreview = document.getElementById("weekly-chart");
+const barcode_input = document.getElementById("barcode-input");
+const product_search_input = document.getElementById("product-search-input");
+
+/******************************************* */
+barcode_input.addEventListener("input", () => {
+  product_search_input.value = null;
+});
+
+product_search_input.addEventListener("input", () => {
+  barcode_input.value = null;
+});
 
 //************************************************ */
 function loadSection() {
@@ -415,7 +426,7 @@ listbtn.addEventListener("click", () => {
 searchinput.addEventListener("input", () => {
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
-
+  allstyle();
   let name = document.getElementById("search-input").value;
   seacrhapi(name);
 });
@@ -435,97 +446,7 @@ all.addEventListener("click", (e) => {
 </div>`;
   recipes.classList.remove("grid", "grid-cols-4", "gap-5");
   randomealsapi();
-
-  all.classList.add("bg-emerald-600", "text-white", "hover:bg-emerald-700");
-  all.classList.remove("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-
-  egypt.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  egypt.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  German.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  German.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Greek.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Greek.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Indian.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Indian.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Irish.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Irish.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Japanese.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Japanese.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Lebanese.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Lebanese.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Mexican.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Mexican.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Moroccan.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Moroccan.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  SouthKorean.classList.add(
-    "bg-gray-100",
-    "text-gray-700",
-    "hover:bg-gray-200",
-  );
-  SouthKorean.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Spanish.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Spanish.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
-
-  Turkish.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
-  Turkish.classList.remove(
-    "bg-emerald-600",
-    "text-white",
-    "hover:bg-emerald-700",
-  );
+  allstyle();
 });
 
 egypt.addEventListener("click", (e) => {
@@ -1796,6 +1717,8 @@ Turkish.addEventListener("click", (e) => {
 //*************************************************************************************** */
 
 beef.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1811,6 +1734,8 @@ beef.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Chicken.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1826,6 +1751,8 @@ Chicken.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Dessert.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1841,6 +1768,8 @@ Dessert.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Lamb.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1856,6 +1785,8 @@ Lamb.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Starter.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1871,6 +1802,8 @@ Starter.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Pasta.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1886,6 +1819,8 @@ Pasta.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Pork.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1901,6 +1836,8 @@ Pork.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Seafood.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1916,6 +1853,8 @@ Seafood.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Vegan.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1931,6 +1870,8 @@ Vegan.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Breakfast.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1946,6 +1887,8 @@ Breakfast.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Goat.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -1961,6 +1904,8 @@ Goat.addEventListener("click", (e) => {
   filtercategory(e.currentTarget.id);
 });
 Side.addEventListener("click", (e) => {
+  allstyle();
+
   logbtn.innerHTML = ` <i class="fa-solid fa-clipboard-list"></i>
               <span>calculating...</span>`;
 
@@ -2304,3 +2249,96 @@ allnutri.addEventListener("click", () => {
     displaycatregoryproduct(x);
   }
 });
+
+function allstyle() {
+  all.classList.add("bg-emerald-600", "text-white", "hover:bg-emerald-700");
+  all.classList.remove("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+
+  egypt.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  egypt.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  German.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  German.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Greek.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Greek.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Indian.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Indian.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Irish.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Irish.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Japanese.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Japanese.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Lebanese.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Lebanese.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Mexican.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Mexican.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Moroccan.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Moroccan.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  SouthKorean.classList.add(
+    "bg-gray-100",
+    "text-gray-700",
+    "hover:bg-gray-200",
+  );
+  SouthKorean.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Spanish.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Spanish.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+
+  Turkish.classList.add("bg-gray-100", "text-gray-700", "hover:bg-gray-200");
+  Turkish.classList.remove(
+    "bg-emerald-600",
+    "text-white",
+    "hover:bg-emerald-700",
+  );
+}
