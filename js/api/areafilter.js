@@ -242,31 +242,31 @@ window.layerappear2 = function (index) {
 };
 
 async function anylayze2(index) {
-try {
+  try {
     const ingredients = filter[index].ingredients.map(
-    (item) => `${item.measure} ${item.ingredient}`,
-  );
+      (item) => `${item.measure} ${item.ingredient}`,
+    );
 
-  const req = await fetch(
-    "https://nutriplan-api.vercel.app/api/nutrition/analyze",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": "BJPeZipETV33IdBd4oQO9afh7NKTFzaUSOwvSGuF",
+    const req = await fetch(
+      "https://nutriplan-api.vercel.app/api/nutrition/analyze",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "BJPeZipETV33IdBd4oQO9afh7NKTFzaUSOwvSGuF",
+        },
+        body: JSON.stringify({
+          recipeName: filter[index].name,
+          ingredients: ingredients,
+        }),
       },
-      body: JSON.stringify({
-        recipeName: filter[index].name,
-        ingredients: ingredients,
-      }),
-    },
-  );
+    );
 
-  const response = await req.json();
-  analysis = response.data;
+    const response = await req.json();
+    analysis = response.data;
 
-  let cart4 = ``;
-  cart4 = `  <h2
+    let cart4 = ``;
+    cart4 = `  <h2
                   class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"
                 >
                   <i class="fa-solid fa-chart-pie text-emerald-600"></i>
@@ -388,11 +388,11 @@ try {
                   </div>
                 </div>`;
 
-  nutrition.innerHTML = cart4;
-  logbtn.innerHTML = `<i class="fa-solid fa-clipboard-list"></i>
+    nutrition.innerHTML = cart4;
+    logbtn.innerHTML = `<i class="fa-solid fa-clipboard-list"></i>
               <span>Log this meal</span>`;
 
-  modalcontent.innerHTML = `<div class="bg-white rounded-xl p-6 max-w-md w-full mx-4">
+    modalcontent.innerHTML = `<div class="bg-white rounded-xl p-6 max-w-md w-full mx-4">
   <div class="flex items-center gap-4 mb-6">
     <img
       src="${filter[index].thumbnail}"
@@ -486,8 +486,8 @@ try {
     </button>
   </div>
 </div>`;
-} catch (error) {
-     nutrition.innerHTML = ` <h2
+  } catch (error) {
+    nutrition.innerHTML = ` <h2
                   class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"
                 >
                   <i class="fa-solid fa-chart-pie text-emerald-600"></i>
@@ -497,9 +497,9 @@ try {
     <p class="text-gray-500 text-lg">something went wrong</p>
     <p class="text-gray-400 text-sm mt-2">please refresh</p>
 </div>`;
-  logbtn.innerHTML = `<i class="fa-solid fa-clipboard-list"></i>
+    logbtn.innerHTML = `<i class="fa-solid fa-clipboard-list"></i>
               <span>something went wrong</span>`;
-}
+  }
 }
 
 window.increase2 = function () {

@@ -78,7 +78,7 @@ import {
   allnutri,
   displayproduct,
 } from "./api/searchproduct.js";
-import { ui } from "./ui/components.js";
+import { showlog, showmeal, showproduct, ui } from "./ui/components.js";
 ui();
 randomealsapi();
 let currentmode = "";
@@ -94,6 +94,26 @@ const Progressbar = document.getElementById("Progressbar");
 const datetoday = document.getElementById("foodlog-date");
 const logbtnlast = document.getElementById("lastbtn1");
 const weeklyreview = document.getElementById("weekly-chart");
+
+//************************************************ */
+function loadSection() {
+  switch (window.location.hash) {
+    case "#Meals":
+      showmeal();
+      break;
+
+    case "#Products":
+      showproduct();
+      break;
+
+    case "#Food-Log":
+      showlog();
+      break;
+  }
+}
+loadSection();
+window.addEventListener("hashchange", loadSection);
+
 ///**************************************************************** */
 datetoday.innerHTML = new Date().toLocaleDateString("en-US", {
   weekday: "long",
