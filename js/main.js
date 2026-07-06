@@ -236,7 +236,7 @@ export function show() {
                 </div>
                 <div class="w-full overflow-hidden bg-gray-200 rounded-full h-2.5">
                   <div
-                    class="bg-emerald-500 h-2.5 rounded-full"
+                    class=" ${totalCalories > 2000 ? "bg-red-500" : "bg-emerald-500"} h-2.5 rounded-full"
                     style="width: ${(totalCalories / 2000) * 100}%"
                   ></div>
                 </div>
@@ -251,7 +251,7 @@ export function show() {
                 </div>
                 <div class="w-full overflow-hidden bg-gray-200 rounded-full h-2.5">
                   <div
-                    class="bg-blue-500 h-2.5 rounded-full"
+                    class="${totalProtein > 50 ? "bg-red-500" : "bg-blue-500"} h-2.5 rounded-full"
                     style="width:${(totalProtein / 50) * 100}%"
                   ></div>
                 </div>
@@ -264,7 +264,7 @@ export function show() {
                 </div>
                 <div class="w-full overflow-hidden bg-gray-200 rounded-full h-2.5">
                   <div
-                    class="bg-amber-500  h-2.5 rounded-full"
+                    class="${totalCarbs > 250 ? "bg-red-500" : "bg-amber-500"}  h-2.5 rounded-full"
                     style="width: ${(totalCarbs / 250) * 100}%"
                   ></div>
                 </div>
@@ -277,7 +277,7 @@ export function show() {
                 </div>
                 <div class="w-full overflow-hidden bg-gray-200 rounded-full h-2.5">
                   <div
-                    class="bg-purple-500 h-2.5 rounded-full"
+                    class=" ${totalFat > 65 ? "bg-red-500" : "bg-purple-500"} h-2.5 rounded-full"
                     style="width: ${(totalFat / 65) * 100}%"
                   ></div>
                 </div>
