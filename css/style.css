@@ -1,0 +1,12 @@
+.loading {
+  display: none;
+}
+.scale125:hover {
+  transform: scale(1.08);
+  transition: all 0.2s;
+}
+
+.scale:hover {
+  transform: scale(0.95);
+  transition: all 0.2s;
+}
