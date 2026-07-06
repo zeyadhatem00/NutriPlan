@@ -336,7 +336,14 @@ function weekdaycontent(params) {
   const week = getLast7Days(loggedmeal);
 
   let cart = "";
-  weeklyreview.classList.add("grid", "grid-cols-7", "gap-2", "py-5");
+  weeklyreview.classList.add(
+    "grid",
+    "grid-cols-7",
+    "overflow-x-auto",
+    "gap-5",
+    "md:gap-2",
+    "py-5",
+  );
   weeklyreview.classList.remove("h-64");
 
   week.forEach((day) => {
@@ -369,16 +376,16 @@ logbtn.addEventListener("click", () => {
 });
 
 gridbtn.addEventListener("click", () => {
-  recipes.classList.add("grid-cols-4", "gap-5");
-  recipes.classList.remove("grid-cols-2", "gap-4");
+  recipes.classList.add("grid-cols-4");
+  recipes.classList.remove("grid-cols-2");
 
   listbtn.classList.remove("rounded-md", "bg-white", "shadow-sm");
   gridbtn.classList.add("rounded-md", "bg-white", "shadow-sm");
 });
 
 listbtn.addEventListener("click", () => {
-  recipes.classList.remove("grid-cols-4", "gap-5");
-  recipes.classList.add("grid-cols-2", "gap-4");
+  recipes.classList.remove("grid-cols-4");
+  recipes.classList.add("grid-cols-2");
 
   listbtn.classList.add("rounded-md", "bg-white", "shadow-sm");
   gridbtn.classList.remove("rounded-md", "bg-white", "shadow-sm");
