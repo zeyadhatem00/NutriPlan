@@ -24,7 +24,7 @@ The food log is local to the current browser profile; there is no account system
 There is no `package.json`, package-lock file, build configuration, or project-specific runtime script in this snapshot. No dependency installation is required. Serve the repository over HTTP so the browser can load JavaScript modules:
 
 ```bash
-git clone --depth 1 https://github.com/zeyadhatem00/NutriPlan.git
+git clone --depth 1 https://github.com/zeyadhatem00/nutriplan.git
 cd NutriPlan
 python3 -m http.server 8000
 ```
